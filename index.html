@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tongue Tech · Le notizie tech, in modo semplice</title>
+  <meta name="description" content="Le notizie tech di Hacker News, rese accessibili a tutti." />
+  <meta name="theme-color" content="#ff4d3a" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <h1 class="logo"><span class="logo-mark" aria-hidden="true">T</span>Tongue <span class="grad">Tech</span></h1>
+      <form id="search-form" class="search" role="search">
+        <label for="search-input" class="sr-only">Cerca notizie</label>
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search-input" type="search" placeholder="Cerca nel mondo tech…" autocomplete="off" />
+        <kbd class="kbd" aria-hidden="true">/</kbd>
+      </form>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambia tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+    </div>
+    <nav class="wrap tabs-wrap" aria-label="Sezioni">
+      <div class="tabs">
+        <button class="tab is-active" data-tab="top" type="button"><span class="tab-icon" aria-hidden="true">🔥</span>In evidenza</button>
+        <button class="tab" data-tab="new" type="button"><span class="tab-icon" aria-hidden="true">⚡</span>Ultime</button>
+        <button class="tab" data-tab="best" type="button"><span class="tab-icon" aria-hidden="true">🏆</span>Migliori</button>
+        <button class="tab" data-tab="favorites" type="button"><span class="tab-icon" aria-hidden="true">♥</span>Preferiti <span id="fav-count" class="badge">0</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Powered by Hacker News</p>
+      <h2 class="hero-title">Il mondo tech, <span class="grad">spiegato semplice.</span></h2>
+      <p class="hero-sub">Le storie più discusse dalla community, in un feed veloce da scorrere. Niente gergo, solo l'essenziale.</p>
+    </section>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <ul id="list" class="list"></ul>
+    <div class="more">
+      <button id="load-more" class="btn" type="button" hidden>Carica altre notizie</button>
+    </div>
+  </main>
+
+  <footer class="wrap site-footer">
+    Dati da <a href="https://github.com/HackerNews/API" target="_blank" rel="noopener noreferrer">Hacker News API</a>
+    e <a href="https://hn.algolia.com/api" target="_blank" rel="noopener noreferrer">Algolia Search</a>.
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
